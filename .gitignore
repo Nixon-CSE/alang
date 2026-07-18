@@ -1,28 +1,28 @@
 # Dependencies
 node_modules/
 
-# Build output
+# Build
 dist/
 
 # Generated ALang projects
 my-alang-app/
 test-*/
 
-# Environment files
+# Environment
 .env
 .env.local
 
 # macOS
 .DS_Store
 
+# IDE
+.cursor/
+.vscode/
+
 # Logs
 *.log
-npm-debug.log*
 pnpm-debug.log*
-
-# IDE
-.vscode/
-.cursor/
+npm-debug.log*
 
 # Coverage
 coverage/

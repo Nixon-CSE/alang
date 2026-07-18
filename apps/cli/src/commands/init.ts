@@ -15,18 +15,21 @@ export function registerInitCommand(program: Command): void {
 }
 
 async function runInit(projectName: string): Promise<void> {
-  const generator = new ProjectGenerator(projectName);
-
   try {
-    logSuccess("Creating project...");
-    await generator.createProjectDirectory();
+    await ProjectGenerator.create(projectName);
 
-    logSuccess("Generating app.alang");
-    await generator.generateFiles();
-
-    logSuccess("Done!");
+    logSuccess("Project initialized successfully!");
+    logSuccess(`Next steps:
+  cd ${projectName}
+  alang validate
+  alang plan`);
   } catch (error) {
-    logError(error instanceof Error ? error.message : "Failed to initialize project.");
+    logError(
+      error instanceof Error
+        ? error.message
+        : "Failed to initialize project."
+    );
+
     process.exit(1);
   }
 }

@@ -24,6 +24,23 @@ importers:
         specifier: ^15.0.0
         version: 15.0.0
 
+  packages/parser: {}
+
+  packages/planner:
+    dependencies:
+      '@alang/parser':
+        specifier: workspace:*
+        version: link:../parser
+      '@alang/semantic':
+        specifier: workspace:*
+        version: link:../semantic
+
+  packages/semantic:
+    dependencies:
+      '@alang/parser':
+        specifier: workspace:*
+        version: link:../parser
+
 packages:
 
   '@esbuild/aix-ppc64@0.28.1':
