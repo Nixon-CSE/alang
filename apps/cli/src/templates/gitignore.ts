@@ -1,0 +1,12 @@
+export function generateGitignore(): string {
+  return `.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+build/
+
+.DS_Store
+`;
+}
